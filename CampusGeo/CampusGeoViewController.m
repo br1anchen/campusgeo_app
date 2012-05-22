@@ -26,6 +26,10 @@
     // Release any retained subviews of the main view.
 }
 
+- (IBAction)userLogin:(id)sender {
+    
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
