@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2974F943156B34D8006BA54E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F942156B34D8006BA54E /* UIKit.framework */; };
+		2974F945156B34D8006BA54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F944156B34D8006BA54E /* Foundation.framework */; };
+		2974F947156B34D8006BA54E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F946156B34D8006BA54E /* CoreGraphics.framework */; };
+		2974F94D156B34D8006BA54E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2974F94B156B34D8006BA54E /* InfoPlist.strings */; };
+		2974F94F156B34D8006BA54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F94E156B34D8006BA54E /* main.m */; };
+		2974F953156B34D8006BA54E /* CampusGeoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F952156B34D8006BA54E /* CampusGeoAppDelegate.m */; };
+		2974F956156B34D8006BA54E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2974F954156B34D8006BA54E /* MainStoryboard.storyboard */; };
+		2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F958156B34D8006BA54E /* CampusGeoViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2974F93E156B34D8006BA54E /* CampusGeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusGeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2974F942156B34D8006BA54E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2974F944156B34D8006BA54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2974F946156B34D8006BA54E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2974F94A156B34D8006BA54E /* CampusGeo-Info.plist */ = {isa = PBXFileReference; path = "CampusGeo-Info.plist"; sourceTree = "<group>"; };
+		2974F94C156B34D8006BA54E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2974F94E156B34D8006BA54E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2974F950156B34D8006BA54E /* CampusGeo-Prefix.pch */ = {isa = PBXFileReference; path = "CampusGeo-Prefix.pch"; sourceTree = "<group>"; };
+		2974F951156B34D8006BA54E /* CampusGeoAppDelegate.h */ = {isa = PBXFileReference; path = CampusGeoAppDelegate.h; sourceTree = "<group>"; };
+		2974F952156B34D8006BA54E /* CampusGeoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusGeoAppDelegate.m; sourceTree = "<group>"; };
+		2974F955156B34D8006BA54E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		2974F957156B34D8006BA54E /* CampusGeoViewController.h */ = {isa = PBXFileReference; path = CampusGeoViewController.h; sourceTree = "<group>"; };
+		2974F958156B34D8006BA54E /* CampusGeoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusGeoViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2974F93B156B34D8006BA54E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2974F943156B34D8006BA54E /* UIKit.framework in Frameworks */,
+				2974F945156B34D8006BA54E /* Foundation.framework in Frameworks */,
+				2974F947156B34D8006BA54E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2974F933156B34D8006BA54E = {
+			isa = PBXGroup;
+			children = (
+				2974F948156B34D8006BA54E /* CampusGeo */,
+				2974F941156B34D8006BA54E /* Frameworks */,
+				2974F93F156B34D8006BA54E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2974F93F156B34D8006BA54E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2974F93E156B34D8006BA54E /* CampusGeo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2974F941156B34D8006BA54E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2974F942156B34D8006BA54E /* UIKit.framework */,
+				2974F944156B34D8006BA54E /* Foundation.framework */,
+				2974F946156B34D8006BA54E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2974F948156B34D8006BA54E /* CampusGeo */ = {
+			isa = PBXGroup;
+			children = (
+				2974F951156B34D8006BA54E /* CampusGeoAppDelegate.h */,
+				2974F952156B34D8006BA54E /* CampusGeoAppDelegate.m */,
+				2974F954156B34D8006BA54E /* MainStoryboard.storyboard */,
+				2974F957156B34D8006BA54E /* CampusGeoViewController.h */,
+				2974F958156B34D8006BA54E /* CampusGeoViewController.m */,
+				2974F949156B34D8006BA54E /* Supporting Files */,
+			);
+			path = CampusGeo;
+			sourceTree = "<group>";
+		};
+		2974F949156B34D8006BA54E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2974F94A156B34D8006BA54E /* CampusGeo-Info.plist */,
+				2974F94B156B34D8006BA54E /* InfoPlist.strings */,
+				2974F94E156B34D8006BA54E /* main.m */,
+				2974F950156B34D8006BA54E /* CampusGeo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2974F93D156B34D8006BA54E /* CampusGeo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2974F95C156B34D8006BA54E /* Build configuration list for PBXNativeTarget "CampusGeo" */;
+			buildPhases = (
+				2974F93A156B34D8006BA54E /* Sources */,
+				2974F93B156B34D8006BA54E /* Frameworks */,
+				2974F93C156B34D8006BA54E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CampusGeo;
+			productName = CampusGeo;
+			productReference = 2974F93E156B34D8006BA54E /* CampusGeo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2974F935156B34D8006BA54E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CampusGeo;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 2974F938156B34D8006BA54E /* Build configuration list for PBXProject "CampusGeo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2974F933156B34D8006BA54E;
+			productRefGroup = 2974F93F156B34D8006BA54E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2974F93D156B34D8006BA54E /* CampusGeo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2974F93C156B34D8006BA54E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2974F94D156B34D8006BA54E /* InfoPlist.strings in Resources */,
+				2974F956156B34D8006BA54E /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2974F93A156B34D8006BA54E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2974F94F156B34D8006BA54E /* main.m in Sources */,
+				2974F953156B34D8006BA54E /* CampusGeoAppDelegate.m in Sources */,
+				2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2974F94B156B34D8006BA54E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2974F94C156B34D8006BA54E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2974F954156B34D8006BA54E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2974F955156B34D8006BA54E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2974F95A156B34D8006BA54E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2974F95B156B34D8006BA54E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2974F95D156B34D8006BA54E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusGeo/CampusGeo-Prefix.pch";
+				INFOPLIST_FILE = "CampusGeo/CampusGeo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2974F95E156B34D8006BA54E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusGeo/CampusGeo-Prefix.pch";
+				INFOPLIST_FILE = "CampusGeo/CampusGeo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2974F938156B34D8006BA54E /* Build configuration list for PBXProject "CampusGeo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2974F95A156B34D8006BA54E /* Debug */,
+				2974F95B156B34D8006BA54E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2974F95C156B34D8006BA54E /* Build configuration list for PBXNativeTarget "CampusGeo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2974F95D156B34D8006BA54E /* Debug */,
+				2974F95E156B34D8006BA54E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2974F935156B34D8006BA54E /* Project object */;
+}
