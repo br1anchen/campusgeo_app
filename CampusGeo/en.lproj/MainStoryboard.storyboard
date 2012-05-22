@@ -1,55 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="YSp-Af-irW">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Campus Geo View Controller-->
+        <!--Campus Geo View Controller - CampusGeo Application-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="CampusGeoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CampusGeo Application" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" id="LZ4-EL-oEZ">
-                                <rect key="frame" x="46" y="48" width="228" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="iNx-5H-wx9">
-                                <rect key="frame" x="155" y="140" width="119" height="31"/>
+                                <rect key="frame" x="155" y="79" width="119" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="kTN-N9-y25">
-                                <rect key="frame" x="155" y="214" width="119" height="31"/>
+                                <rect key="frame" x="155" y="142" width="119" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" id="2nq-Dm-2bM">
-                                <rect key="frame" x="46" y="145" width="93" height="21"/>
+                                <rect key="frame" x="46" y="84" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" id="uMe-jY-vvR">
-                                <rect key="frame" x="46" y="219" width="93" height="21"/>
+                                <rect key="frame" x="46" y="147" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="O4P-5a-Rir">
-                                <rect key="frame" x="93" y="294" width="141" height="37"/>
+                                <rect key="frame" x="93" y="202" width="141" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -60,19 +53,70 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="userLogin:" destination="2" eventType="touchUpInside" id="Cub-1r-4dB"/>
+                                    <action selector="login" destination="2" eventType="touchUpInside" id="lfl-df-Yr2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="CampusGeo Application" id="UWy-Rh-azU"/>
+                    <connections>
+                        <segue destination="wzF-tI-BJv" kind="push" identifier="EnterUserAdmin" id="LNz-MX-Dhp"/>
+                    </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="750" y="233"/>
+        </scene>
+        <!--User Admin View Controller - Welcome-->
+        <scene sceneID="1X9-gn-DVd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4MH-IV-bBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="wzF-tI-BJv" customClass="UserAdminViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aRt-4Z-zPT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="FuV-B1-nII">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome" id="Fhx-iF-QJA"/>
+                    <connections>
+                        <outlet property="view" destination="FuV-B1-nII" id="jkm-eG-rAe"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1199" y="233"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ueg-Ud-hip">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUp-Of-dDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="YSp-Af-irW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ant-YG-1ot">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="TeF-Bz-Xks"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="224" y="233"/>
         </scene>
     </scenes>
     <classes>
         <class className="CampusGeoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CampusGeoViewController.h"/>
+        </class>
+        <class className="UserAdminViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserAdminViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

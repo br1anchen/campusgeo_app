@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29477320156BC4EC00006559 /* LoginBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947731F156BC4EC00006559 /* LoginBrain.m */; };
+		29477324156BDCC400006559 /* UserAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29477323156BDCC400006559 /* UserAdminViewController.m */; };
 		2974F943156B34D8006BA54E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F942156B34D8006BA54E /* UIKit.framework */; };
 		2974F945156B34D8006BA54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F944156B34D8006BA54E /* Foundation.framework */; };
 		2974F947156B34D8006BA54E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F946156B34D8006BA54E /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		2947731E156BC4EC00006559 /* LoginBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginBrain.h; path = ProcessBrain/LoginBrain.h; sourceTree = "<group>"; };
 		2947731F156BC4EC00006559 /* LoginBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginBrain.m; path = ProcessBrain/LoginBrain.m; sourceTree = "<group>"; };
+		29477322156BDCC400006559 /* UserAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAdminViewController.h; path = ViewController/UserAdminViewController.h; sourceTree = "<group>"; };
+		29477323156BDCC400006559 /* UserAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAdminViewController.m; path = ViewController/UserAdminViewController.m; sourceTree = "<group>"; };
 		2974F93E156B34D8006BA54E /* CampusGeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusGeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2974F942156B34D8006BA54E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2974F944156B34D8006BA54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,6 +62,17 @@
 			name = ProcessBrain;
 			sourceTree = "<group>";
 		};
+		29477321156BDBCE00006559 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2974F957156B34D8006BA54E /* CampusGeoViewController.h */,
+				2974F958156B34D8006BA54E /* CampusGeoViewController.m */,
+				29477322156BDCC400006559 /* UserAdminViewController.h */,
+				29477323156BDCC400006559 /* UserAdminViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		2974F933156B34D8006BA54E = {
 			isa = PBXGroup;
 			children = (
@@ -89,12 +103,11 @@
 		2974F948156B34D8006BA54E /* CampusGeo */ = {
 			isa = PBXGroup;
 			children = (
+				29477321156BDBCE00006559 /* ViewController */,
 				2947731C156BC4A000006559 /* ProcessBrain */,
 				2974F951156B34D8006BA54E /* CampusGeoAppDelegate.h */,
 				2974F952156B34D8006BA54E /* CampusGeoAppDelegate.m */,
 				2974F954156B34D8006BA54E /* MainStoryboard.storyboard */,
-				2974F957156B34D8006BA54E /* CampusGeoViewController.h */,
-				2974F958156B34D8006BA54E /* CampusGeoViewController.m */,
 				2974F949156B34D8006BA54E /* Supporting Files */,
 			);
 			path = CampusGeo;
@@ -178,6 +191,7 @@
 				2974F953156B34D8006BA54E /* CampusGeoAppDelegate.m in Sources */,
 				2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */,
 				29477320156BC4EC00006559 /* LoginBrain.m in Sources */,
+				29477324156BDCC400006559 /* UserAdminViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

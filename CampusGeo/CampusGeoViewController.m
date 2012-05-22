@@ -26,9 +26,21 @@
     // Release any retained subviews of the main view.
 }
 
-- (IBAction)userLogin:(id)sender {
-    
+- (void)checkAndEnter
+{
+    [self performSegueWithIdentifier:@"EnterUserAdmin" sender:self];
 }
+
+- (IBAction)login {
+    [self checkAndEnter];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"EnterUserAdmin"]){
+        NSLog(@"save username and password");
+    }
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
