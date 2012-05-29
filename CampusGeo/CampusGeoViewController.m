@@ -8,6 +8,9 @@
 
 #import "CampusGeoViewController.h"
 #import "LoginBrain.h"
+#import "ASIFormDataRequest.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface CampusGeoViewController ()
 @property (nonatomic,strong) LoginBrain *loginbrain;
@@ -26,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    loginInfo.text = @"enter your username and password";
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -35,9 +39,20 @@
     // Release any retained subviews of the main view.
 }
 
+#define HOST_DOMAIN @"59.79.8.115:8080"
 - (void)checkAndEnter
 {
-    [self performSegueWithIdentifier:@"EnterUserAdmin" sender:self];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/user/login?username=%@&password=%@",HOST_DOMAIN,username.text,password.text]];//set the url of server
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous]; //start to send the message
+    NSString *strResponse = [request responseString];
+    if([strResponse isEqualToString:@"true"]){
+        [self performSegueWithIdentifier:@"EnterUserAdmin" sender:self];
+    }else{
+        loginInfo.text = @"wrong username or password";
+    }
 }
 
 - (IBAction)login {

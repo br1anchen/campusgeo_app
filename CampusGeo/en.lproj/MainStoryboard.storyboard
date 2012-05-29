@@ -62,8 +62,8 @@
                                     <action selector="login" destination="2" eventType="touchUpInside" id="lfl-df-Yr2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Login Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="Agy-i9-eia">
-                                <rect key="frame" x="119" y="287" width="82" height="37"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Login Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="12" id="Agy-i9-eia">
+                                <rect key="frame" x="46" y="287" width="228" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
