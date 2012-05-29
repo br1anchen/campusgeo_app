@@ -17,6 +17,8 @@
 		2974F953156B34D8006BA54E /* CampusGeoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F952156B34D8006BA54E /* CampusGeoAppDelegate.m */; };
 		2974F956156B34D8006BA54E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2974F954156B34D8006BA54E /* MainStoryboard.storyboard */; };
 		2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F958156B34D8006BA54E /* CampusGeoViewController.m */; };
+		29E534D51574FF1E00CF80FA /* SocialDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D41574FF1E00CF80FA /* SocialDataViewController.m */; };
+		29E534D81575052400CF80FA /* GeoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D71575052400CF80FA /* GeoInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		2974F955156B34D8006BA54E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2974F957156B34D8006BA54E /* CampusGeoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CampusGeoViewController.h; sourceTree = "<group>"; };
 		2974F958156B34D8006BA54E /* CampusGeoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusGeoViewController.m; sourceTree = "<group>"; };
+		29E534D31574FF1E00CF80FA /* SocialDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialDataViewController.h; path = ViewController/SocialDataViewController.h; sourceTree = "<group>"; };
+		29E534D41574FF1E00CF80FA /* SocialDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialDataViewController.m; path = ViewController/SocialDataViewController.m; sourceTree = "<group>"; };
+		29E534D61575052300CF80FA /* GeoInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoInfoViewController.h; path = ViewController/GeoInfoViewController.h; sourceTree = "<group>"; };
+		29E534D71575052400CF80FA /* GeoInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoInfoViewController.m; path = ViewController/GeoInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,10 @@
 				2974F958156B34D8006BA54E /* CampusGeoViewController.m */,
 				29477322156BDCC400006559 /* UserAdminViewController.h */,
 				29477323156BDCC400006559 /* UserAdminViewController.m */,
+				29E534D31574FF1E00CF80FA /* SocialDataViewController.h */,
+				29E534D41574FF1E00CF80FA /* SocialDataViewController.m */,
+				29E534D61575052300CF80FA /* GeoInfoViewController.h */,
+				29E534D71575052400CF80FA /* GeoInfoViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -103,6 +113,7 @@
 		2974F948156B34D8006BA54E /* CampusGeo */ = {
 			isa = PBXGroup;
 			children = (
+				29E534D21574F92500CF80FA /* View */,
 				29477321156BDBCE00006559 /* ViewController */,
 				2947731C156BC4A000006559 /* ProcessBrain */,
 				2974F951156B34D8006BA54E /* CampusGeoAppDelegate.h */,
@@ -122,6 +133,13 @@
 				2974F950156B34D8006BA54E /* CampusGeo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29E534D21574F92500CF80FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +210,8 @@
 				2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */,
 				29477320156BC4EC00006559 /* LoginBrain.m in Sources */,
 				29477324156BDCC400006559 /* UserAdminViewController.m in Sources */,
+				29E534D51574FF1E00CF80FA /* SocialDataViewController.m in Sources */,
+				29E534D81575052400CF80FA /* GeoInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

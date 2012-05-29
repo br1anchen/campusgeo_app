@@ -1,18 +1,18 @@
 //
-//  UserAdminViewController.m
+//  GeoInfoViewController.m
 //  CampusGeo
 //
-//  Created by Brian Chen on 5/22/12.
+//  Created by Brian Chen on 5/29/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UserAdminViewController.h"
+#import "GeoInfoViewController.h"
 
-@interface UserAdminViewController ()
+@interface GeoInfoViewController ()
 
 @end
 
-@implementation UserAdminViewController
+@implementation GeoInfoViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,21 +33,6 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-}
-
-- (IBAction)trackPeople {
-    [self showUserGeoInfo];
-}
-
-- (void)showUserGeoInfo
-{
-    [self performSegueWithIdentifier:@"TrackPeople" sender:self];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"TrackPeople"]){
-        NSLog(@"show user geoinfo");
-    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
