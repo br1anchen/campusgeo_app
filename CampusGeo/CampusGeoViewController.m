@@ -7,12 +7,21 @@
 //
 
 #import "CampusGeoViewController.h"
+#import "LoginBrain.h"
 
 @interface CampusGeoViewController ()
-
+@property (nonatomic,strong) LoginBrain *loginbrain;
 @end
 
 @implementation CampusGeoViewController
+@synthesize username,password,loginInfo;
+@synthesize loginbrain = _loginbrain;
+
+- (LoginBrain *)loginbrain
+{
+    if(!_loginbrain) _loginbrain = [[LoginBrain alloc] init];
+    return _loginbrain;
+}
 
 - (void)viewDidLoad
 {
@@ -38,6 +47,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"EnterUserAdmin"]){
         NSLog(@"save username and password");
+        [self.loginbrain setUserName:username.text];
+        [self.loginbrain setPassword:password.text];
     }
 }
 
@@ -45,6 +56,23 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    if(touch.view.tag != 1)
+    {
+        [username resignFirstResponder];
+        [password resignFirstResponder];
+    }
+
+}
+
+- (IBAction)getRidOfKeyboard:(id)sender
+{
+    [username resignFirstResponder];
+    [password resignFirstResponder];
 }
 
 @end

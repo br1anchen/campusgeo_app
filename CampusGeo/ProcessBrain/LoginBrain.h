@@ -14,8 +14,8 @@
     NSString *password;
 }
 
--(NSString *)setUserName:(NSString *)aName;
--(NSString *)setPassword:(NSString *)aKey;
+-(void)setUserName:(NSString *)aName;
+-(void)setPassword:(NSString *)aKey;
 -(NSString *)getUserName;
 -(NSString *)getPassword;
 

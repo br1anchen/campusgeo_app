@@ -19,6 +19,7 @@
 		2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F958156B34D8006BA54E /* CampusGeoViewController.m */; };
 		29E534D51574FF1E00CF80FA /* SocialDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D41574FF1E00CF80FA /* SocialDataViewController.m */; };
 		29E534D81575052400CF80FA /* GeoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D71575052400CF80FA /* GeoInfoViewController.m */; };
+		29E534E215750DD800CF80FA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29E534E115750DD800CF80FA /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		29E534D41574FF1E00CF80FA /* SocialDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialDataViewController.m; path = ViewController/SocialDataViewController.m; sourceTree = "<group>"; };
 		29E534D61575052300CF80FA /* GeoInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoInfoViewController.h; path = ViewController/GeoInfoViewController.h; sourceTree = "<group>"; };
 		29E534D71575052400CF80FA /* GeoInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoInfoViewController.m; path = ViewController/GeoInfoViewController.m; sourceTree = "<group>"; };
+		29E534E115750DD800CF80FA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				2974F952156B34D8006BA54E /* CampusGeoAppDelegate.m */,
 				2974F954156B34D8006BA54E /* MainStoryboard.storyboard */,
 				2974F949156B34D8006BA54E /* Supporting Files */,
+				29E534E115750DD800CF80FA /* Settings.bundle */,
 			);
 			path = CampusGeo;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				2974F94D156B34D8006BA54E /* InfoPlist.strings in Resources */,
 				2974F956156B34D8006BA54E /* MainStoryboard.storyboard in Resources */,
+				29E534E215750DD800CF80FA /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
