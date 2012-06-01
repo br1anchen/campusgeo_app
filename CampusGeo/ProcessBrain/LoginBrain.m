@@ -15,6 +15,7 @@
     username = aName;
     NSUserDefaults *userPref = [NSUserDefaults standardUserDefaults];
     [userPref setValue:username forKey:@"username"];
+    [userPref synchronize];
 }
 
 -(void)setPassword:(NSString *)aKey
@@ -22,6 +23,7 @@
     password = aKey;
     NSUserDefaults *userPref = [NSUserDefaults standardUserDefaults];
     [userPref setValue:password forKey:@"password"];
+    [userPref synchronize];
 }
 
 -(NSString *)getUserName

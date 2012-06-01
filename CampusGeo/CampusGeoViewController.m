@@ -39,7 +39,7 @@
     // Release any retained subviews of the main view.
 }
 
-#define HOST_DOMAIN @"59.79.8.115:8080"
+#define HOST_DOMAIN @"192.168.11.37:8080"
 - (void)checkAndEnter
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/user/login?username=%@&password=%@",HOST_DOMAIN,username.text,password.text]];//set the url of server
@@ -49,9 +49,10 @@
     [request startSynchronous]; //start to send the message
     NSString *strResponse = [request responseString];
     if([strResponse isEqualToString:@"true"]){
+        loginInfo.text = @"Welcome to CampusGeo";
         [self performSegueWithIdentifier:@"EnterUserAdmin" sender:self];
     }else{
-        loginInfo.text = @"wrong username or password";
+        loginInfo.text = @"Wrong username or password";
     }
 }
 
