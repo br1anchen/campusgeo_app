@@ -41,12 +41,12 @@
 
 - (void)showUserGeoInfo
 {
-    [self performSegueWithIdentifier:@"TrackPeople" sender:self];
+    [self performSegueWithIdentifier:@"ShowSocial" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"TrackPeople"]){
-        NSLog(@"show user geoinfo");
+    if([segue.identifier isEqualToString:@"ShowSocial"]){
+        NSLog(@"show user social");
     }
 }
 

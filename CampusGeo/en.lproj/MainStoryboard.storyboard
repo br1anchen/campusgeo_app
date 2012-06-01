@@ -109,7 +109,7 @@
                                         </state>
                                         <connections>
                                             <action selector="trackPeople" destination="wzF-tI-BJv" eventType="touchUpInside" id="Ro4-9u-gGi"/>
-                                            <segue destination="kvD-rP-nwp" kind="push" identifier="TrackPeople" id="nsp-0Z-Ilp"/>
+                                            <segue destination="kvD-rP-nwp" kind="push" identifier="ShowSocial" id="nsp-0Z-Ilp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LgV-yK-EX4">
