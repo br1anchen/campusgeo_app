@@ -7,20 +7,20 @@
 //
 
 #import "UserAdminViewController.h"
+#import "SocialBrain.h"
+#import "SocialDataViewController.h"
 
 @interface UserAdminViewController ()
-
+@property (nonatomic,strong) SocialBrain *socialbrain;
 @end
 
 @implementation UserAdminViewController
+@synthesize socialbrain = _socialbrain;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (SocialBrain *)socialbrain
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    if(!_socialbrain) _socialbrain = [[SocialBrain alloc] init];
+    return _socialbrain;
 }
 
 - (void)viewDidLoad
@@ -35,18 +35,12 @@
     // Release any retained subviews of the main view.
 }
 
-- (IBAction)trackPeople {
-    [self showUserGeoInfo];
-}
-
-- (void)showUserGeoInfo
-{
-    [self performSegueWithIdentifier:@"ShowSocial" sender:self];
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowSocial"]){
         NSLog(@"show user social");
+        NSString *hostuser = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+        NSArray *friends = [self.socialbrain getSocialList:hostuser];
+        [segue.destinationViewController setFriends:friends];
     }
 }
 

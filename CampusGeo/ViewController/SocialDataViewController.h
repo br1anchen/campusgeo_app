@@ -10,4 +10,6 @@
 
 @interface SocialDataViewController : UITableViewController
 
+@property (nonatomic,strong) NSArray *friends;
+
 @end
