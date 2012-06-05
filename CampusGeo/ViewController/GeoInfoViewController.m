@@ -42,8 +42,8 @@
     
     self.title = self.username;
     
-    //[self populateMapWithLocation];
-    
+    [self populateMapWithLocation];
+    self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
 	// Do any additional setup after loading the view.
 }
@@ -82,9 +82,9 @@
 - (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation
 
 {
-    [mv removeAnnotations:mv.annotations];
+    //[mv removeAnnotations:mv.annotations];
 
-    [self populateMapWithLocation];
+    //[self populateMapWithLocation];
     
 }
 
