@@ -8,19 +8,28 @@
 
 #import "UserAdminViewController.h"
 #import "SocialBrain.h"
+#import "GeoBrain.h"
 #import "SocialDataViewController.h"
 
 @interface UserAdminViewController ()
 @property (nonatomic,strong) SocialBrain *socialbrain;
+@property (nonatomic,strong) GeoBrain *geobrain;
 @end
 
 @implementation UserAdminViewController
 @synthesize socialbrain = _socialbrain;
+@synthesize geobrain = _geobrain;
 
 - (SocialBrain *)socialbrain
 {
     if(!_socialbrain) _socialbrain = [[SocialBrain alloc] init];
     return _socialbrain;
+}
+
+- (GeoBrain *)geobrain
+{
+    if(!_geobrain) _geobrain = [[GeoBrain alloc] init];
+    return _geobrain;
 }
 
 - (void)viewDidLoad
@@ -49,4 +58,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)switchGPS:(id)sender {
+     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    [self.geobrain pushLocationToServer:username:4];
+}
 @end

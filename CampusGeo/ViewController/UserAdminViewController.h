@@ -10,4 +10,6 @@
 
 @interface UserAdminViewController : UIViewController
 
+- (IBAction)switchGPS:(id)sender;
+
 @end

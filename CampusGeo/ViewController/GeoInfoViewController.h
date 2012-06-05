@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface GeoInfoViewController : UIViewController
+@interface GeoInfoViewController : UIViewController <MKMapViewDelegate>
+{
+
+}
+
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic,strong) NSString *username;
+@property (nonatomic,strong) MKPointAnnotation *annotationPoint;
 
 @end

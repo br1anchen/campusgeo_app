@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290CE25B157E516700E14B00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290CE25A157E516700E14B00 /* CoreLocation.framework */; };
 		29477320156BC4EC00006559 /* LoginBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947731F156BC4EC00006559 /* LoginBrain.m */; };
 		29477324156BDCC400006559 /* UserAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29477323156BDCC400006559 /* UserAdminViewController.m */; };
 		2974F943156B34D8006BA54E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F942156B34D8006BA54E /* UIKit.framework */; };
@@ -17,6 +18,7 @@
 		2974F953156B34D8006BA54E /* CampusGeoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F952156B34D8006BA54E /* CampusGeoAppDelegate.m */; };
 		2974F956156B34D8006BA54E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2974F954156B34D8006BA54E /* MainStoryboard.storyboard */; };
 		2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F958156B34D8006BA54E /* CampusGeoViewController.m */; };
+		2977B5F2157DF1BC00498856 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977B5F1157DF1BC00498856 /* Location.m */; };
 		29E1910A15785FE700C1D3EC /* SocialBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E1910915785FE700C1D3EC /* SocialBrain.m */; };
 		29E534D51574FF1E00CF80FA /* SocialDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D41574FF1E00CF80FA /* SocialDataViewController.m */; };
 		29E534D81575052400CF80FA /* GeoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D71575052400CF80FA /* GeoInfoViewController.m */; };
@@ -35,9 +37,13 @@
 		29E5350D157533BB00CF80FA /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E53502157533BB00CF80FA /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29E5350E157533BB00CF80FA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E53505157533BB00CF80FA /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29E98709157C9FA800FC8D82 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E98708157C9FA800FC8D82 /* User.m */; };
+		29E9870B157D0AD600FC8D82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E9870A157D0AD600FC8D82 /* MapKit.framework */; };
+		29E9870E157D114E00FC8D82 /* GeoBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E9870D157D114E00FC8D82 /* GeoBrain.m */; };
+		29E98711157D11F700FC8D82 /* GeoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E98710157D11F700FC8D82 /* GeoInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290CE25A157E516700E14B00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2947731E156BC4EC00006559 /* LoginBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginBrain.h; path = ProcessBrain/LoginBrain.h; sourceTree = "<group>"; };
 		2947731F156BC4EC00006559 /* LoginBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginBrain.m; path = ProcessBrain/LoginBrain.m; sourceTree = "<group>"; };
 		29477322156BDCC400006559 /* UserAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAdminViewController.h; path = ViewController/UserAdminViewController.h; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 		2974F955156B34D8006BA54E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2974F957156B34D8006BA54E /* CampusGeoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CampusGeoViewController.h; sourceTree = "<group>"; };
 		2974F958156B34D8006BA54E /* CampusGeoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusGeoViewController.m; sourceTree = "<group>"; };
+		2977B5F0157DF1BC00498856 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Model/Location.h; sourceTree = "<group>"; };
+		2977B5F1157DF1BC00498856 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Model/Location.m; sourceTree = "<group>"; };
 		29E1910815785FE700C1D3EC /* SocialBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialBrain.h; path = ProcessBrain/SocialBrain.h; sourceTree = "<group>"; };
 		29E1910915785FE700C1D3EC /* SocialBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialBrain.m; path = ProcessBrain/SocialBrain.m; sourceTree = "<group>"; };
 		29E534D31574FF1E00CF80FA /* SocialDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialDataViewController.h; path = ViewController/SocialDataViewController.h; sourceTree = "<group>"; };
@@ -90,6 +98,11 @@
 		29E53505157533BB00CF80FA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = CampusGeo/ASIHTTPRequest/Reachability.m; sourceTree = "<group>"; };
 		29E98707157C9FA800FC8D82 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
 		29E98708157C9FA800FC8D82 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
+		29E9870A157D0AD600FC8D82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		29E9870C157D114E00FC8D82 /* GeoBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoBrain.h; path = ProcessBrain/GeoBrain.h; sourceTree = "<group>"; };
+		29E9870D157D114E00FC8D82 /* GeoBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoBrain.m; path = ProcessBrain/GeoBrain.m; sourceTree = "<group>"; };
+		29E9870F157D11F700FC8D82 /* GeoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoInfo.h; path = Model/GeoInfo.h; sourceTree = "<group>"; };
+		29E98710157D11F700FC8D82 /* GeoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoInfo.m; path = Model/GeoInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290CE25B157E516700E14B00 /* CoreLocation.framework in Frameworks */,
+				29E9870B157D0AD600FC8D82 /* MapKit.framework in Frameworks */,
 				29E534EF1575333500CF80FA /* libz.dylib in Frameworks */,
 				29E534ED1575330C00CF80FA /* MobileCoreServices.framework in Frameworks */,
 				29E534EB157532FF00CF80FA /* SystemConfiguration.framework in Frameworks */,
@@ -117,6 +132,8 @@
 				2947731F156BC4EC00006559 /* LoginBrain.m */,
 				29E1910815785FE700C1D3EC /* SocialBrain.h */,
 				29E1910915785FE700C1D3EC /* SocialBrain.m */,
+				29E9870C157D114E00FC8D82 /* GeoBrain.h */,
+				29E9870D157D114E00FC8D82 /* GeoBrain.m */,
 			);
 			name = ProcessBrain;
 			sourceTree = "<group>";
@@ -156,6 +173,8 @@
 		2974F941156B34D8006BA54E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				290CE25A157E516700E14B00 /* CoreLocation.framework */,
+				29E9870A157D0AD600FC8D82 /* MapKit.framework */,
 				29E534EE1575333500CF80FA /* libz.dylib */,
 				29E534EC1575330C00CF80FA /* MobileCoreServices.framework */,
 				29E534EA157532FF00CF80FA /* SystemConfiguration.framework */,
@@ -228,6 +247,10 @@
 			children = (
 				29E98707157C9FA800FC8D82 /* User.h */,
 				29E98708157C9FA800FC8D82 /* User.m */,
+				29E9870F157D11F700FC8D82 /* GeoInfo.h */,
+				29E98710157D11F700FC8D82 /* GeoInfo.m */,
+				2977B5F0157DF1BC00498856 /* Location.h */,
+				2977B5F1157DF1BC00498856 /* Location.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,6 +337,9 @@
 				29E5350E157533BB00CF80FA /* Reachability.m in Sources */,
 				29E1910A15785FE700C1D3EC /* SocialBrain.m in Sources */,
 				29E98709157C9FA800FC8D82 /* User.m in Sources */,
+				29E9870E157D114E00FC8D82 /* GeoBrain.m in Sources */,
+				29E98711157D11F700FC8D82 /* GeoInfo.m in Sources */,
+				2977B5F2157DF1BC00498856 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

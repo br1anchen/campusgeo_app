@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class SocialDataViewController;
+
+@protocol SocialDataViewControllerDelegate
+@optional
+-(void)socialDataViewController:(SocialDataViewController *)sender choseFriend:(id)friend;
+@end
+
 @interface SocialDataViewController : UITableViewController
 
 @property (nonatomic,strong) NSArray *friends;
+@property (nonatomic,weak) id <SocialDataViewControllerDelegate> delegate;
 
 @end
