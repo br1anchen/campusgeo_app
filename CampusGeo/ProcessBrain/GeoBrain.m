@@ -37,15 +37,29 @@
 
 -(void)pushLocationToServer:(NSString *)username:(int)geoType
 {
+    bindname = username;
+    pushGeoType = geoType;
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.delegate = self;
     [locationManager startUpdatingLocation];
     NSString *latitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude];
-    NSLog(@"latitude:%@",latitude);
     NSString *longitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude];
-    NSLog(@"longitude:%@",longitude);
+    [self pushData2Server:username :geoType :latitude :longitude];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSString *latitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
     
+    [self pushData2Server:bindname :pushGeoType :latitude :longitude];
+    
+}
+
+-(void)pushData2Server:(NSString *)username:(int)geoType:(NSString *)latitude:(NSString *)longitude
+{
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/geo/update?username=%@&latitude=%@&longitude=%@&geoType=%d",HOST_DOMAIN,username,latitude,longitude,geoType]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
@@ -54,9 +68,12 @@
     NSString *strResponse = [request responseString];
     if([strResponse isEqualToString:@"true"]){
         NSLog(@"push location success");
+        NSLog(@"user:%@",username);
+        NSLog(@"latitude:%@",latitude);
+        NSLog(@"longitude:%@",longitude);
     }else{
         NSLog(@"push location failed");
     }
-}
 
+}
 @end

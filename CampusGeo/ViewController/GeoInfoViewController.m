@@ -82,9 +82,12 @@
 - (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation
 
 {
-    //[mv removeAnnotations:mv.annotations];
-
-    //[self populateMapWithLocation];
+    NSString *latitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.longitude];
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    NSString *name = [userPrefs stringForKey:@"username"];
+    
+    [self.geobrain pushData2Server:name :4 :latitude :longitude];
     
 }
 

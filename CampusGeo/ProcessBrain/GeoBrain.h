@@ -10,10 +10,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GeoInfo.h"
 
-@interface GeoBrain : NSObject
+@interface GeoBrain : NSObject <CLLocationManagerDelegate>
+{
+    NSString *bindname;
+    int pushGeoType;
+}
 
 -(GeoInfo *)getGeoInfoByName:(NSString *)username;
 
 -(void)pushLocationToServer:(NSString *)username:(int)geoType;
-
+-(void)pushData2Server:(NSString *)username:(int)geoType:(NSString *)latitude:(NSString *)longitude;
 @end
