@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    traking = NO;
 	// Do any additional setup after loading the view.
 }
 
@@ -46,6 +47,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowSocial"]){
+        traking = NO;
+        trakingTimer = nil;
+        [trakingTimer invalidate];
         NSLog(@"show user social");
         NSString *hostuser = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
         NSArray *friends = [self.socialbrain getSocialList:hostuser];
@@ -59,7 +63,30 @@
 }
 
 - (IBAction)switchGPS:(id)sender {
-     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    [self.geobrain pushLocationToServer:username:4];
+    if(gpsButton.on){
+        [self.geobrain setGPSSwitch:YES];
+        traking = YES;
+        trakingTimer = [NSTimer scheduledTimerWithTimeInterval:5 target: self selector:@selector(updateLocationToServer) userInfo:nil repeats:YES];
+    }else
+    {
+        [self.geobrain setGPSSwitch:NO];
+        traking = NO;
+        trakingTimer = nil;
+        [trakingTimer invalidate];
+    }
 }
+
+-(void)updateLocationToServer
+{
+    if(traking){
+        NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+        [self.geobrain pushLocationToServer:username:4];
+    }else
+    {
+        NSLog(@"stop traking location");
+        trakingTimer = nil;
+        [trakingTimer invalidate];
+    }
+}
+
 @end

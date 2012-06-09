@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface UserAdminViewController : UIViewController
+{
+    IBOutlet UISwitch *gpsButton;
+    BOOL traking;
+    NSTimer *trakingTimer;
+}
 
 - (IBAction)switchGPS:(id)sender;
 

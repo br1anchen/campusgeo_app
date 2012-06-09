@@ -47,6 +47,7 @@
     NSString *latitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude];
     [self pushData2Server:username :geoType :latitude :longitude];
+
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -76,4 +77,20 @@
     }
 
 }
+
+-(void)setGPSSwitch:(BOOL)value
+{
+    gpsSwitch = value;
+    NSUserDefaults *userPref = [NSUserDefaults standardUserDefaults];
+    [userPref setBool:gpsSwitch forKey:@"trackButton"];
+    [userPref synchronize];
+}
+
+-(BOOL)getGPSSwitch
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    BOOL gps = [userPrefs boolForKey:@"trackButton"];
+    return gps;
+}
+
 @end

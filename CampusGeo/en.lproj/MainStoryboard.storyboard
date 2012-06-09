@@ -142,7 +142,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="LW0-dz-Ixx">
+                                    <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="LW0-dz-Ixx">
                                         <rect key="frame" x="221" y="340" width="79" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
@@ -157,6 +157,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="Fhx-iF-QJA"/>
                     <connections>
+                        <outlet property="gpsButton" destination="LW0-dz-Ixx" id="Ln7-I5-i1s"/>
                         <outlet property="view" destination="FuV-B1-nII" id="jkm-eG-rAe"/>
                     </connections>
                 </viewController>
@@ -271,6 +272,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserAdminViewController.h"/>
             <relationships>
                 <relationship kind="action" name="switchGPS:"/>
+                <relationship kind="outlet" name="gpsButton" candidateClass="UISwitch"/>
             </relationships>
         </class>
     </classes>

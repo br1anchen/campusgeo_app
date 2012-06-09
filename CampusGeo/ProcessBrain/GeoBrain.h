@@ -14,9 +14,12 @@
 {
     NSString *bindname;
     int pushGeoType;
+    BOOL gpsSwitch;
 }
 
 -(GeoInfo *)getGeoInfoByName:(NSString *)username;
+-(void)setGPSSwitch:(BOOL)value;
+-(BOOL)getGPSSwitch;
 
 -(void)pushLocationToServer:(NSString *)username:(int)geoType;
 -(void)pushData2Server:(NSString *)username:(int)geoType:(NSString *)latitude:(NSString *)longitude;

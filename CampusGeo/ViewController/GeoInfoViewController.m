@@ -42,9 +42,11 @@
     
     self.title = self.username;
     
-    [self populateMapWithLocation];
     self.mapView.showsUserLocation = YES;
+    [self.mapView setShowsUserLocation:YES];
     self.mapView.delegate = self;
+    
+    [self populateMapWithLocation];
 	// Do any additional setup after loading the view.
 }
 
