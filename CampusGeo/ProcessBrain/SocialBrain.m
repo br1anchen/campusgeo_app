@@ -51,10 +51,10 @@
     NSError *error;
     NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:[request responseData] options:kNilOptions error:&error];
     if(jsonData != nil){
-        NSLog(@"push location success");
+        NSLog(@"push social notification success");
         return true;
     }else{
-        NSLog(@"push location failed");
+        NSLog(@"push social notification failed");
         return false;
     }
 }

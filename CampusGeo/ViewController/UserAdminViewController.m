@@ -9,16 +9,20 @@
 #import "UserAdminViewController.h"
 #import "SocialBrain.h"
 #import "GeoBrain.h"
+#import "NotificationBrain.h"
 #import "SocialDataViewController.h"
+#import "NotificationViewController.h"
 
 @interface UserAdminViewController ()
 @property (nonatomic,strong) SocialBrain *socialbrain;
 @property (nonatomic,strong) GeoBrain *geobrain;
+@property (nonatomic,strong) NotificationBrain *notificationBrain;
 @end
 
 @implementation UserAdminViewController
 @synthesize socialbrain = _socialbrain;
 @synthesize geobrain = _geobrain;
+@synthesize notificationBrain = _notificationBrain;
 
 - (SocialBrain *)socialbrain
 {
@@ -30,6 +34,12 @@
 {
     if(!_geobrain) _geobrain = [[GeoBrain alloc] init];
     return _geobrain;
+}
+
+- (NotificationBrain *)notificationBrain
+{
+    if(!_notificationBrain) _notificationBrain = [[NotificationBrain alloc] init];
+    return _notificationBrain;
 }
 
 - (void)viewDidLoad
@@ -54,6 +64,15 @@
         NSString *hostuser = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
         NSArray *friends = [self.socialbrain getSocialList:hostuser];
         [segue.destinationViewController setFriends:friends];
+    }else if([segue.identifier isEqualToString:@"ShowNotification"])
+    {
+        traking = NO;
+        trakingTimer = nil;
+        [trakingTimer invalidate];
+        NSLog(@"show user notification");
+        NSString *goaluser = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+        NSArray *notifications = [self.notificationBrain getNotifications:goaluser];
+        [segue.destinationViewController setNotifications:notifications];
     }
 }
 

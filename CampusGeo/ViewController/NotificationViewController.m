@@ -1,22 +1,21 @@
 //
-//  SocialDataViewController.m
+//  NotificationViewController.m
 //  CampusGeo
 //
-//  Created by Brian Chen on 5/29/12.
+//  Created by Brian Chen on 6/10/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SocialDataViewController.h"
-#import "GeoInfoViewController.h"
+#import "NotificationViewController.h"
+#import "Notification.h"
+#import "NotificationDetailViewController.h"
 
-@interface SocialDataViewController ()
+@interface NotificationViewController ()
 
 @end
 
-@implementation SocialDataViewController
-
-@synthesize friends = _friends;
-@synthesize delegate = _delegate;
+@implementation NotificationViewController
+@synthesize notifications = _notifications;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,13 +44,6 @@
     // e.g. self.myOutlet = nil;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"ShowFriendGeo"])
-    {
-        NSLog(@"show user geo");
-    }
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -61,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.friends count];
+    return [self.notifications count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,8 +64,17 @@
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    id friend = [self.friends objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",friend];
+    Notification *notification = [self.notifications objectAtIndex:indexPath.row];
+    NSString *type;
+    if(notification.requestType == 0)
+    {
+        type = @"dating";
+    }else
+    {
+        type = @"friend";
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",notification.requestUser,type];
     
     return cell;
 }
@@ -82,10 +83,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id friend = [self.friends objectAtIndex:indexPath.row];
-    GeoInfoViewController *geoinfoView = [self.storyboard instantiateViewControllerWithIdentifier:@"geoinfoView"];
-    [geoinfoView setUsername:friend];
-    [self.navigationController pushViewController:geoinfoView animated:YES];
+    Notification *notification = [self.notifications objectAtIndex:indexPath.row];
+    NotificationDetailViewController *detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"notificationDetail"];
+    detailView.requestName = notification.requestUser;
+    detailView.requestType = notification.requestType;
+    detailView.requestId = notification.idname;
+    [self.navigationController pushViewController:detailView animated:YES];
 }
 
 @end
