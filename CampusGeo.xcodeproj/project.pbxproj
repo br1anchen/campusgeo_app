@@ -19,6 +19,7 @@
 		2974F956156B34D8006BA54E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2974F954156B34D8006BA54E /* MainStoryboard.storyboard */; };
 		2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F958156B34D8006BA54E /* CampusGeoViewController.m */; };
 		2977B5F2157DF1BC00498856 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977B5F1157DF1BC00498856 /* Location.m */; };
+		299E9D6F15833BF700C36A6D /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E9D6E15833BF700C36A6D /* AddFriendViewController.m */; };
 		29E1910A15785FE700C1D3EC /* SocialBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E1910915785FE700C1D3EC /* SocialBrain.m */; };
 		29E534D51574FF1E00CF80FA /* SocialDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D41574FF1E00CF80FA /* SocialDataViewController.m */; };
 		29E534D81575052400CF80FA /* GeoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E534D71575052400CF80FA /* GeoInfoViewController.m */; };
@@ -63,6 +64,8 @@
 		2974F958156B34D8006BA54E /* CampusGeoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusGeoViewController.m; sourceTree = "<group>"; };
 		2977B5F0157DF1BC00498856 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Model/Location.h; sourceTree = "<group>"; };
 		2977B5F1157DF1BC00498856 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Model/Location.m; sourceTree = "<group>"; };
+		299E9D6D15833BF700C36A6D /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendViewController.h; path = ViewController/AddFriendViewController.h; sourceTree = "<group>"; };
+		299E9D6E15833BF700C36A6D /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendViewController.m; path = ViewController/AddFriendViewController.m; sourceTree = "<group>"; };
 		29E1910815785FE700C1D3EC /* SocialBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialBrain.h; path = ProcessBrain/SocialBrain.h; sourceTree = "<group>"; };
 		29E1910915785FE700C1D3EC /* SocialBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialBrain.m; path = ProcessBrain/SocialBrain.m; sourceTree = "<group>"; };
 		29E534D31574FF1E00CF80FA /* SocialDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialDataViewController.h; path = ViewController/SocialDataViewController.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				29E534D41574FF1E00CF80FA /* SocialDataViewController.m */,
 				29E534D61575052300CF80FA /* GeoInfoViewController.h */,
 				29E534D71575052400CF80FA /* GeoInfoViewController.m */,
+				299E9D6D15833BF700C36A6D /* AddFriendViewController.h */,
+				299E9D6E15833BF700C36A6D /* AddFriendViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				29E9870E157D114E00FC8D82 /* GeoBrain.m in Sources */,
 				29E98711157D11F700FC8D82 /* GeoInfo.m in Sources */,
 				2977B5F2157DF1BC00498856 /* Location.m in Sources */,
+				299E9D6F15833BF700C36A6D /* AddFriendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

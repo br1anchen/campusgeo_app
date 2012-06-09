@@ -15,4 +15,6 @@
 
 -(NSArray *)getSocialList:(NSString *)hostUser;
 
+-(BOOL)sendSocialNoti:(NSString *)friendname:(NSString *)socialType;
+
 @end

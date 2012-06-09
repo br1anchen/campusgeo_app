@@ -198,13 +198,97 @@
                             <outlet property="delegate" destination="kvD-rP-nwp" id="BuZ-km-06o"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Track People" id="7nI-Kt-3TZ"/>
+                    <navigationItem key="navigationItem" title="Track People" id="7nI-Kt-3TZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="frg-72-kQT">
+                            <connections>
+                                <segue destination="eaX-GD-7YE" kind="push" id="Hpj-YF-6Lw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addFriendButton" destination="frg-72-kQT" id="jhz-6D-LkW"/>
                         <outlet property="view" destination="HGX-DA-y2g" id="yrz-co-8pI"/>
                     </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1117" y="189"/>
+        </scene>
+        <!--Add Friend View Controller - New Friend-->
+        <scene sceneID="9CG-e6-gIV">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceC-IA-ApO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="eaX-GD-7YE" customClass="AddFriendViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DOL-YL-cpq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="PVd-M0-fxn">
+                                <rect key="frame" x="146" y="81" width="134" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getRidOfKeyboard:" destination="eaX-GD-7YE" eventType="editingDidEndOnExit" id="hhF-LM-SKT"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fHy-eE-yEY">
+                                <rect key="frame" x="88" y="211" width="144" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="send notification">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendNotification:" destination="eaX-GD-7YE" eventType="touchUpInside" id="CHw-MX-HFS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UDf-tT-b2h">
+                                <rect key="frame" x="20" y="86" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Social Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="B85-AH-pFh">
+                                <rect key="frame" x="20" y="139" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ghr-3s-R3Y">
+                                <rect key="frame" x="146" y="139" width="134" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getRidOfKeyboard:" destination="eaX-GD-7YE" eventType="editingDidEndOnExit" id="tb9-mN-jUO"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add your new friend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yiX-9d-L46">
+                                <rect key="frame" x="74" y="294" width="173" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Friend" id="AEU-8S-CxZ"/>
+                    <connections>
+                        <outlet property="friendName" destination="PVd-M0-fxn" id="cI9-x3-kMp"/>
+                        <outlet property="newFriendInfo" destination="yiX-9d-L46" id="o86-Er-4Dj"/>
+                        <outlet property="socialType" destination="ghr-3s-R3Y" id="Gba-Yc-Gfb"/>
+                        <segue destination="kvD-rP-nwp" kind="push" identifier="back2SocialData" id="dwZ-5Q-F0n"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1565" y="-239"/>
         </scene>
         <!--Geo Info View Controller-->
         <scene sceneID="enZ-Gp-ysL">
@@ -227,7 +311,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1623" y="189"/>
+            <point key="canvasLocation" x="1565" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ueg-Ud-hip">
@@ -249,6 +333,16 @@
         </scene>
     </scenes>
     <classes>
+        <class className="AddFriendViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFriendViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="getRidOfKeyboard:"/>
+                <relationship kind="action" name="sendNotification:"/>
+                <relationship kind="outlet" name="friendName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="newFriendInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="socialType" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="CampusGeoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CampusGeoViewController.h"/>
             <relationships>
@@ -267,6 +361,9 @@
         </class>
         <class className="SocialDataViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialDataViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addFriendButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
         <class className="UserAdminViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserAdminViewController.h"/>

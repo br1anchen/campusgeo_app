@@ -38,4 +38,25 @@
     return friendList;
 }
 
+-(BOOL)sendSocialNoti:(NSString *)friendname:(NSString *)socialType
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    NSString *requestUser = [userPrefs stringForKey:@"username"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/social?requestUser=%@&goalUser=%@&reqType=%@",HOST_DOMAIN,requestUser,friendname,socialType]];//set the url of server
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous]; //start to send the message
+    
+    NSError *error;
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:[request responseData] options:kNilOptions error:&error];
+    if(jsonData != nil){
+        NSLog(@"push location success");
+        return true;
+    }else{
+        NSLog(@"push location failed");
+        return false;
+    }
+}
+
 @end

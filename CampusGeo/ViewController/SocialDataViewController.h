@@ -16,6 +16,9 @@
 @end
 
 @interface SocialDataViewController : UITableViewController
+{
+    IBOutlet UIBarButtonItem *addFriendButton;
+}
 
 @property (nonatomic,strong) NSArray *friends;
 @property (nonatomic,weak) id <SocialDataViewControllerDelegate> delegate;
