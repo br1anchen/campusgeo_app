@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic,strong) NSString *requestName;
-@property int requestType;
+@property (nonatomic,strong) NSNumber *requestType;
 @property (nonatomic,strong) NSString *requestId;
 
 - (IBAction)passNotification:(id)sender;

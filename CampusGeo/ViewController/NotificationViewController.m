@@ -67,7 +67,7 @@
     
     Notification *notification = [self.notifications objectAtIndex:indexPath.row];
     NSString *type;
-    if(notification.requestType == 0)
+    if([notification.requestType intValue] == 0)
     {
         type = @"dating";
     }else

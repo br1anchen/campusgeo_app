@@ -12,11 +12,11 @@
 {
     NSString *idname;
     NSString *requestUser;
-   int requestType;
+    NSNumber *requestType;
 }
 
 @property (nonatomic,copy) NSString *idname;
 @property (nonatomic,copy) NSString *requestUser;
-@property  int requestType;
+@property (nonatomic,copy) NSNumber *requestType;
 
 @end

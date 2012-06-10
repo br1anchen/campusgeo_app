@@ -41,7 +41,7 @@
     
     requestnameLabel.text = self.requestName;
     NSString *type;
-    if(self.requestType == 0)
+    if([self.requestType intValue] == 0)
     {
         type = @"dating";
         self.title = @"dating detail";
