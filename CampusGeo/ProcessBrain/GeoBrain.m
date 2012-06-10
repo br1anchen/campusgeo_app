@@ -13,7 +13,7 @@
 
 @implementation GeoBrain
 
-#define HOST_DOMAIN @"59.79.8.115:8080"
+#define HOST_DOMAIN @"192.168.1.6:8080"
 -(GeoInfo *)getGeoInfoByName:(NSString *)username
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/geo/current?bindUser=%@",HOST_DOMAIN,username]];//set the url of server

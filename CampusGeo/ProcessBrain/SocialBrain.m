@@ -14,7 +14,7 @@
 
 @implementation SocialBrain
 
-#define HOST_DOMAIN @"59.79.8.115:8080"
+#define HOST_DOMAIN @"192.168.1.6:8080"
 
 -(NSArray *)getSocialList:(NSString *)hostUser
 {

@@ -44,9 +44,11 @@
     if(self.requestType == 0)
     {
         type = @"dating";
+        self.title = @"dating detail";
     }else
     {
         type = @"friend";
+        self.title = @"friend detail";
     }
     
     requestTypeLabel.text = type;

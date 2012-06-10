@@ -39,7 +39,7 @@
     // Release any retained subviews of the main view.
 }
 
-#define HOST_DOMAIN @"59.79.8.115:8080"
+#define HOST_DOMAIN @"192.168.1.6:8080"
 - (void)checkAndEnter
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/user/login?username=%@&password=%@",HOST_DOMAIN,username.text,password.text]];//set the url of server
