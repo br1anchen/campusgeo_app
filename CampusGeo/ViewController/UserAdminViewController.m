@@ -10,19 +10,23 @@
 #import "SocialBrain.h"
 #import "GeoBrain.h"
 #import "NotificationBrain.h"
+#import "AppointmentBrain.h"
 #import "SocialDataViewController.h"
 #import "NotificationViewController.h"
+#import "AppointmentViewController.h"
 
 @interface UserAdminViewController ()
 @property (nonatomic,strong) SocialBrain *socialbrain;
 @property (nonatomic,strong) GeoBrain *geobrain;
 @property (nonatomic,strong) NotificationBrain *notificationBrain;
+@property (nonatomic,strong) AppointmentBrain *appointmentBrain;
 @end
 
 @implementation UserAdminViewController
 @synthesize socialbrain = _socialbrain;
 @synthesize geobrain = _geobrain;
 @synthesize notificationBrain = _notificationBrain;
+@synthesize appointmentBrain = _appointmentBrain;
 
 - (SocialBrain *)socialbrain
 {
@@ -42,6 +46,12 @@
     return _notificationBrain;
 }
 
+- (AppointmentBrain *)appointmentBrain
+{
+    if(!_appointmentBrain) _appointmentBrain = [[AppointmentBrain alloc] init];
+    return _appointmentBrain;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,23 +66,27 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    traking = NO;
+    trakingTimer = nil;
+    [trakingTimer invalidate];
+    
     if([segue.identifier isEqualToString:@"ShowSocial"]){
-        traking = NO;
-        trakingTimer = nil;
-        [trakingTimer invalidate];
         NSLog(@"show user social");
         NSString *hostuser = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
         NSArray *friends = [self.socialbrain getSocialList:hostuser];
         [segue.destinationViewController setFriends:friends];
     }else if([segue.identifier isEqualToString:@"ShowNotification"])
     {
-        traking = NO;
-        trakingTimer = nil;
-        [trakingTimer invalidate];
         NSLog(@"show user notification");
         NSString *goaluser = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
         NSArray *notifications = [self.notificationBrain getNotifications:goaluser];
         [segue.destinationViewController setNotifications:notifications];
+    }else if([segue.identifier isEqualToString:@"ShowDatings"])
+    {
+        NSLog(@"show user dating");
+        NSString *bindUser = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+        NSArray *datings = [self.appointmentBrain getDatings:bindUser];
+        [segue.destinationViewController setDatings:datings];
     }
 }
 

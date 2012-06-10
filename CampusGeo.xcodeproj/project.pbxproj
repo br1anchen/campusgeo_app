@@ -11,6 +11,9 @@
 		29477320156BC4EC00006559 /* LoginBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947731F156BC4EC00006559 /* LoginBrain.m */; };
 		29477324156BDCC400006559 /* UserAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29477323156BDCC400006559 /* UserAdminViewController.m */; };
 		294CC41D1584CC4000BD7730 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC41C1584CC4000BD7730 /* RegisterViewController.m */; };
+		294CC4211584D50100BD7730 /* AppointmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC4201584D50100BD7730 /* AppointmentViewController.m */; };
+		294CC4241584D5CA00BD7730 /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC4231584D5CA00BD7730 /* Appointment.m */; };
+		294CC4271584E0E000BD7730 /* AppointmentBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC4261584E0E000BD7730 /* AppointmentBrain.m */; };
 		2974F943156B34D8006BA54E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F942156B34D8006BA54E /* UIKit.framework */; };
 		2974F945156B34D8006BA54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F944156B34D8006BA54E /* Foundation.framework */; };
 		2974F947156B34D8006BA54E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F946156B34D8006BA54E /* CoreGraphics.framework */; };
@@ -56,6 +59,12 @@
 		29477323156BDCC400006559 /* UserAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAdminViewController.m; path = ViewController/UserAdminViewController.m; sourceTree = "<group>"; };
 		294CC41B1584CC4000BD7730 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ViewController/RegisterViewController.h; sourceTree = "<group>"; };
 		294CC41C1584CC4000BD7730 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ViewController/RegisterViewController.m; sourceTree = "<group>"; };
+		294CC41F1584D50100BD7730 /* AppointmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppointmentViewController.h; path = ViewController/AppointmentViewController.h; sourceTree = "<group>"; };
+		294CC4201584D50100BD7730 /* AppointmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppointmentViewController.m; path = ViewController/AppointmentViewController.m; sourceTree = "<group>"; };
+		294CC4221584D5CA00BD7730 /* Appointment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appointment.h; path = Model/Appointment.h; sourceTree = "<group>"; };
+		294CC4231584D5CA00BD7730 /* Appointment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appointment.m; path = Model/Appointment.m; sourceTree = "<group>"; };
+		294CC4251584E0E000BD7730 /* AppointmentBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppointmentBrain.h; path = ProcessBrain/AppointmentBrain.h; sourceTree = "<group>"; };
+		294CC4261584E0E000BD7730 /* AppointmentBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppointmentBrain.m; path = ProcessBrain/AppointmentBrain.m; sourceTree = "<group>"; };
 		2974F93E156B34D8006BA54E /* CampusGeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusGeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2974F942156B34D8006BA54E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2974F944156B34D8006BA54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,6 +163,8 @@
 				29E9870D157D114E00FC8D82 /* GeoBrain.m */,
 				299E9D791583C64300C36A6D /* NotificationBrain.h */,
 				299E9D7A1583C64300C36A6D /* NotificationBrain.m */,
+				294CC4251584E0E000BD7730 /* AppointmentBrain.h */,
+				294CC4261584E0E000BD7730 /* AppointmentBrain.m */,
 			);
 			name = ProcessBrain;
 			sourceTree = "<group>";
@@ -177,6 +188,8 @@
 				299E9D771583BDC400C36A6D /* NotificationDetailViewController.m */,
 				294CC41B1584CC4000BD7730 /* RegisterViewController.h */,
 				294CC41C1584CC4000BD7730 /* RegisterViewController.m */,
+				294CC41F1584D50100BD7730 /* AppointmentViewController.h */,
+				294CC4201584D50100BD7730 /* AppointmentViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -281,6 +294,8 @@
 				2977B5F1157DF1BC00498856 /* Location.m */,
 				299E9D731583B6BF00C36A6D /* Notification.h */,
 				299E9D741583B6BF00C36A6D /* Notification.m */,
+				294CC4221584D5CA00BD7730 /* Appointment.h */,
+				294CC4231584D5CA00BD7730 /* Appointment.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,6 +391,9 @@
 				299E9D781583BDC400C36A6D /* NotificationDetailViewController.m in Sources */,
 				299E9D7B1583C64300C36A6D /* NotificationBrain.m in Sources */,
 				294CC41D1584CC4000BD7730 /* RegisterViewController.m in Sources */,
+				294CC4211584D50100BD7730 /* AppointmentViewController.m in Sources */,
+				294CC4241584D5CA00BD7730 /* Appointment.m in Sources */,
+				294CC4271584E0E000BD7730 /* AppointmentBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
