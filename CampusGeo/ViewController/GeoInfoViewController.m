@@ -76,6 +76,7 @@
     self.annotationPoint.subtitle = geoinfo.subtitle;
     
     [self.mapView addAnnotation:self.annotationPoint];
+    [self.mapView selectAnnotation:self.annotationPoint animated:YES];
     
     [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.annotationPoint.coordinate, 50,50) animated:YES];
 }
