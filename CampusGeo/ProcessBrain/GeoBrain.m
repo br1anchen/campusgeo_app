@@ -67,12 +67,18 @@
     [request setRequestMethod:@"GET"];
     [request startSynchronous]; //start to send the message
     NSString *strResponse = [request responseString];
-    if([strResponse isEqualToString:@"create"] || [strResponse isEqualToString:@"update"]){
+    if([strResponse isEqualToString:@"\"create\""]){
         NSLog(@"push location success");
         NSLog(@"user:%@",username);
         NSLog(@"latitude:%@",latitude);
         NSLog(@"longitude:%@",longitude);
-    }else{
+    }else if( [strResponse isEqualToString:@"\"update\""]){
+        NSLog(@"push location success");
+        NSLog(@"user:%@",username);
+        NSLog(@"latitude:%@",latitude);
+        NSLog(@"longitude:%@",longitude);
+    }else
+    {
         NSLog(@"push location failed");
     }
 

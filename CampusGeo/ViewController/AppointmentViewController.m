@@ -8,6 +8,7 @@
 
 #import "AppointmentViewController.h"
 #import "Appointment.h"
+#import "DatingDetailViewController.h"
 
 @interface AppointmentViewController ()
 
@@ -77,13 +78,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    Appointment *dating = [self.datings objectAtIndex:indexPath.row];
+    DatingDetailViewController *datinginfoView = [self.storyboard instantiateViewControllerWithIdentifier:@"datingInfoView"];
+    [datinginfoView setIdname:dating.idname];
+    [self.navigationController pushViewController:datinginfoView animated:YES];
 }
 
 @end

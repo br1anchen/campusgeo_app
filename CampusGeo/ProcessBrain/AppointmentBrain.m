@@ -42,5 +42,25 @@
     return datingList;
 }
 
+-(GeoInfo *)getDatingDetailById:(NSString *)idname{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/dating/detail?id=%@",HOST_DOMAIN,idname]];//set the url of server
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous]; //start to send the message
+    
+    NSError *error;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[request responseData] options:kNilOptions error:&error];
+    GeoInfo *newgeo = [[GeoInfo alloc] init];
+    if(json != nil){
+        [newgeo setTitle:[NSString stringWithFormat:@"Dating:%@ and %@",[json objectForKey:@"host"],[json objectForKey:@"dater"]]];
+        [newgeo setSubtitle:[NSString stringWithFormat:@"%@ %@",[json objectForKey:@"date"],[json objectForKey:@"time"]]];
+        [newgeo setLatitude:[json objectForKey:@"latitude"]];
+        [newgeo setLongitude:[json objectForKey:@"longitude"]];
+    }
+    
+    return newgeo;
+}
+
 -(NSString *)bookDating2Server:(NSString *)host:(NSString *)dater:(NSString *)date:(NSString *)time:(NSString *)latitude:(NSString *)longitude{}
 @end
