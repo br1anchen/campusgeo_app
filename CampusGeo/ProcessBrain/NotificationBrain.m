@@ -42,4 +42,26 @@
 
 }
 
+-(NSString *)passNotification2Server:(NSString *)requestId
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/pass?requestId=%@",HOST_DOMAIN,requestId]];//set the url of server
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous]; //start to send the message
+    
+    NSString *strResponse;
+    NSError *error;
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:[request responseData] options:kNilOptions error:&error];
+    if(jsonData != nil){
+        NSLog(@"push social notification success");
+        strResponse = [jsonData objectForKey:@"status"];
+    }else{
+        NSLog(@"push social notification failed");
+        strResponse = @"false";
+    }
+    
+    return strResponse;
+}
+
 @end

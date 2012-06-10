@@ -15,4 +15,5 @@
 
 -(NSArray *)getNotifications:(NSString *)goalUser;
 
+-(NSString *)passNotification2Server:(NSString *)requestId;
 @end

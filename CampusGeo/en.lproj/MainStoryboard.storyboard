@@ -222,7 +222,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTQ-tI-B63" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="zhv-oa-PTp" customClass="NotificationViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CEf-n3-Ev0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -313,6 +313,7 @@
                     <connections>
                         <outlet property="requestTypeLabel" destination="YS0-Ys-gch" id="VNV-2t-lKW"/>
                         <outlet property="requestnameLabel" destination="6k4-d2-3pc" id="5iq-uM-PI8"/>
+                        <segue destination="zhv-oa-PTp" kind="push" identifier="back2Notification" id="f0X-2M-fgH"/>
                     </connections>
                 </viewController>
             </objects>
@@ -495,6 +496,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="f0X-2M-fgH"/>
         <segue reference="ows-5o-jbG"/>
     </inferredMetricsTieBreakers>
 </document>
