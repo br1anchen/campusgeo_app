@@ -15,6 +15,7 @@
 		294CC4241584D5CA00BD7730 /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC4231584D5CA00BD7730 /* Appointment.m */; };
 		294CC4271584E0E000BD7730 /* AppointmentBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC4261584E0E000BD7730 /* AppointmentBrain.m */; };
 		294CC42A1584E75E00BD7730 /* DatingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC4291584E75E00BD7730 /* DatingDetailViewController.m */; };
+		294CC42D1585084000BD7730 /* AddDatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294CC42C1585083F00BD7730 /* AddDatingViewController.m */; };
 		2974F943156B34D8006BA54E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F942156B34D8006BA54E /* UIKit.framework */; };
 		2974F945156B34D8006BA54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F944156B34D8006BA54E /* Foundation.framework */; };
 		2974F947156B34D8006BA54E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2974F946156B34D8006BA54E /* CoreGraphics.framework */; };
@@ -68,6 +69,8 @@
 		294CC4261584E0E000BD7730 /* AppointmentBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppointmentBrain.m; path = ProcessBrain/AppointmentBrain.m; sourceTree = "<group>"; };
 		294CC4281584E75E00BD7730 /* DatingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatingDetailViewController.h; path = ViewController/DatingDetailViewController.h; sourceTree = "<group>"; };
 		294CC4291584E75E00BD7730 /* DatingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatingDetailViewController.m; path = ViewController/DatingDetailViewController.m; sourceTree = "<group>"; };
+		294CC42B1585083F00BD7730 /* AddDatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddDatingViewController.h; path = ViewController/AddDatingViewController.h; sourceTree = "<group>"; };
+		294CC42C1585083F00BD7730 /* AddDatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddDatingViewController.m; path = ViewController/AddDatingViewController.m; sourceTree = "<group>"; };
 		2974F93E156B34D8006BA54E /* CampusGeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusGeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2974F942156B34D8006BA54E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2974F944156B34D8006BA54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -195,6 +198,8 @@
 				294CC4201584D50100BD7730 /* AppointmentViewController.m */,
 				294CC4281584E75E00BD7730 /* DatingDetailViewController.h */,
 				294CC4291584E75E00BD7730 /* DatingDetailViewController.m */,
+				294CC42B1585083F00BD7730 /* AddDatingViewController.h */,
+				294CC42C1585083F00BD7730 /* AddDatingViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				294CC4241584D5CA00BD7730 /* Appointment.m in Sources */,
 				294CC4271584E0E000BD7730 /* AppointmentBrain.m in Sources */,
 				294CC42A1584E75E00BD7730 /* DatingDetailViewController.m in Sources */,
+				294CC42D1585084000BD7730 /* AddDatingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

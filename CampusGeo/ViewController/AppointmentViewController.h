@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppointmentViewController : UITableViewController
+{
+    IBOutlet UIBarButtonItem *addDatingButton;
+}
 
 @property (nonatomic,strong) NSArray *datings;
 

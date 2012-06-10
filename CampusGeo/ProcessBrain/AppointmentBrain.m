@@ -62,5 +62,28 @@
     return newgeo;
 }
 
--(NSString *)bookDating2Server:(NSString *)host:(NSString *)dater:(NSString *)date:(NSString *)time:(NSString *)latitude:(NSString *)longitude{}
+-(NSString *)bookDating2Server:(NSString *)host:(NSString *)dater:(NSString *)date:(NSString *)time:(NSString *)latitude:(NSString *)longitude
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/dating?host=%@&dater=%@&date=%@&time=%@&latitude=%@&longitude=%@",HOST_DOMAIN,host,dater,date,time,latitude,longitude]];//set the url of server
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous]; //start to send the message
+    
+    NSError *error;
+    NSString *strRespone;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[request responseData] options:kNilOptions error:&error];
+    if(json!=nil)
+    {
+        if([[json objectForKey:@"status"] isEqualToString:@"false"])
+        {
+            strRespone = @"true";
+        }
+    }else
+    {
+        strRespone = @"false";
+    }
+    
+    return strRespone;
+}
 @end
