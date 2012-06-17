@@ -113,7 +113,7 @@
 {
     if(traking){
         NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-        [self.geobrain pushLocationToServer:username:4];
+        [self.geobrain pushLocationToServer:username:4:@"outdoor"];
     }else
     {
         NSLog(@"stop traking location");

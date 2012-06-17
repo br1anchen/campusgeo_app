@@ -90,7 +90,7 @@
     NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
     NSString *name = [userPrefs stringForKey:@"username"];
     
-    [self.geobrain pushData2Server:name :4 :latitude :longitude];
+    [self.geobrain pushData2Server:name :4 :latitude :longitude:@"outdoor"];
     
 }
 

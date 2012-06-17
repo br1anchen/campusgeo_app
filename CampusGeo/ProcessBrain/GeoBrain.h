@@ -21,6 +21,6 @@
 -(void)setGPSSwitch:(BOOL)value;
 -(BOOL)getGPSSwitch;
 
--(void)pushLocationToServer:(NSString *)username:(int)geoType;
--(void)pushData2Server:(NSString *)username:(int)geoType:(NSString *)latitude:(NSString *)longitude;
+-(void)pushLocationToServer:(NSString *)username:(int)geoType:(NSString *)area;
+-(void)pushData2Server:(NSString *)username:(int)geoType:(NSString *)latitude:(NSString *)longitude:(NSString *)area;
 @end
