@@ -54,10 +54,15 @@
     }
 }
 
-#define HOST_DOMAIN @"192.168.1.6:8080"
+-(NSString *)getHostAddress
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    return [userPrefs stringForKey:@"hostaddress"];
+}
+
 -(NSString *)registerInfo2Server
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/user/new?username=%@&password=%@&role=%@",HOST_DOMAIN,usernameText.text,passwordText.text,roleText.text]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/user/new?username=%@&password=%@&role=%@",[self getHostAddress],usernameText.text,passwordText.text,roleText.text]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];

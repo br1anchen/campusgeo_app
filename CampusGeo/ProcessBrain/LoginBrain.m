@@ -40,4 +40,11 @@
     return pwd;
 }
 
+-(NSString *)getHostAddress
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    hostaddress = [userPrefs stringForKey:@"hostaddress"];
+    return hostaddress;
+}
+
 @end

@@ -39,10 +39,9 @@
     // Release any retained subviews of the main view.
 }
 
-#define HOST_DOMAIN @"192.168.1.6:8080"
 - (void)checkAndEnter
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/user/login?username=%@&password=%@",HOST_DOMAIN,username.text,password.text]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/user/login?username=%@&password=%@",[self.loginbrain getHostAddress],username.text,password.text]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];

@@ -14,12 +14,10 @@
 
 @implementation SocialBrain
 
-#define HOST_DOMAIN @"192.168.1.6:8080"
-
 -(NSArray *)getSocialList:(NSString *)hostUser
 {
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/social/friendList?hostuser=%@",HOST_DOMAIN,hostUser]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/social/friendList?hostuser=%@",[self getHostAddress],hostUser]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -42,7 +40,7 @@
 {
     NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
     NSString *requestUser = [userPrefs stringForKey:@"username"];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/social?requestUser=%@&goalUser=%@&reqType=%@",HOST_DOMAIN,requestUser,friendname,socialType]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/social?requestUser=%@&goalUser=%@&reqType=%@",[self getHostAddress],requestUser,friendname,socialType]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -57,6 +55,12 @@
         NSLog(@"push social notification failed");
         return false;
     }
+}
+
+-(NSString *)getHostAddress
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    return [userPrefs stringForKey:@"hostaddress"];
 }
 
 @end

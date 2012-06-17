@@ -13,10 +13,9 @@
 
 @implementation GeoBrain
 
-#define HOST_DOMAIN @"192.168.1.6:8080"
 -(GeoInfo *)getGeoInfoByName:(NSString *)username
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/geo/current?bindUser=%@",HOST_DOMAIN,username]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/geo/current?bindUser=%@",[self getHostAddress],username]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -61,7 +60,7 @@
 
 -(void)pushData2Server:(NSString *)username:(int)geoType:(NSString *)latitude:(NSString *)longitude
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/geo/update?username=%@&latitude=%@&longitude=%@&geoType=%d",HOST_DOMAIN,username,latitude,longitude,geoType]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/geo/update?username=%@&latitude=%@&longitude=%@&geoType=%d",[self getHostAddress],username,latitude,longitude,geoType]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -99,4 +98,9 @@
     return gps;
 }
 
+-(NSString *)getHostAddress
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    return [userPrefs stringForKey:@"hostaddress"];
+}
 @end

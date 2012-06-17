@@ -89,17 +89,17 @@
     [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.annotationPoint.coordinate, 50,50) animated:YES];
 }
 
-- (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation
-
-{
-    NSString *latitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.latitude];
-    NSString *longitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.longitude];
-    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
-    NSString *name = [userPrefs stringForKey:@"username"];
-    
-    [self.geobrain pushData2Server:name :4 :latitude :longitude];
-    
-}
+//- (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation
+//
+//{
+//    NSString *latitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.latitude];
+//    NSString *longitude = [NSString stringWithFormat:@"%f",userLocation.coordinate.longitude];
+//    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+//    NSString *name = [userPrefs stringForKey:@"username"];
+//    
+//    [self.geobrain pushData2Server:name :4 :latitude :longitude];
+//    
+//}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {	
 	if (annotation == mapView.userLocation) { //returning nil means 'use built in location view'

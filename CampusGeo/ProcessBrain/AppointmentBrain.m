@@ -14,10 +14,9 @@
 
 @implementation AppointmentBrain
 
-#define HOST_DOMAIN @"192.168.1.6:8080"
 -(NSArray *)getDatings:(NSString *)bindUser
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/dating/future?bindUser=%@",HOST_DOMAIN,bindUser]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/dating/future?bindUser=%@",[self getHostAddress],bindUser]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -43,7 +42,7 @@
 }
 
 -(GeoInfo *)getDatingDetailById:(NSString *)idname{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/dating/detail?id=%@",HOST_DOMAIN,idname]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/dating/detail?id=%@",[self getHostAddress],idname]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -64,7 +63,7 @@
 
 -(NSString *)bookDating2Server:(NSString *)host:(NSString *)dater:(NSString *)date:(NSString *)time:(NSString *)latitude:(NSString *)longitude
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/dating?host=%@&dater=%@&date=%@&time=%@&latitude=%@&longitude=%@",HOST_DOMAIN,host,dater,date,time,latitude,longitude]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/dating?host=%@&dater=%@&date=%@&time=%@&latitude=%@&longitude=%@",[self getHostAddress],host,dater,date,time,latitude,longitude]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -85,5 +84,11 @@
     }
     
     return strRespone;
+}
+
+-(NSString *)getHostAddress
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    return [userPrefs stringForKey:@"hostaddress"];
 }
 @end

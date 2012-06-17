@@ -14,11 +14,9 @@
 
 @implementation NotificationBrain
 
-#define HOST_DOMAIN @"192.168.1.6:8080"
-
 -(NSArray *)getNotifications:(NSString *)goalUser
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/all?goalUser=%@",HOST_DOMAIN,goalUser]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/all?goalUser=%@",[self getHostAddress],goalUser]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -44,7 +42,7 @@
 
 -(NSString *)passNotification2Server:(NSString *)requestId
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/pass?requestId=%@",HOST_DOMAIN,requestId]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/request/pass?requestId=%@",[self getHostAddress],requestId]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -62,6 +60,12 @@
     }
     
     return strResponse;
+}
+
+-(NSString *)getHostAddress
+{
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    return [userPrefs stringForKey:@"hostaddress"];
 }
 
 @end

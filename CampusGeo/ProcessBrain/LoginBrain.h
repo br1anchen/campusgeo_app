@@ -12,11 +12,13 @@
 {
     NSString *username;
     NSString *password;
+    NSString *hostaddress;
 }
 
 -(void)setUserName:(NSString *)aName;
 -(void)setPassword:(NSString *)aKey;
 -(NSString *)getUserName;
 -(NSString *)getPassword;
+-(NSString *)getHostAddress;
 
 @end
