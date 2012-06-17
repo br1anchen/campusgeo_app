@@ -27,6 +27,7 @@
 @synthesize geobrain = _geobrain;
 @synthesize notificationBrain = _notificationBrain;
 @synthesize appointmentBrain = _appointmentBrain;
+@synthesize connectionPeers,connectionPicker,connectionSession;
 
 - (SocialBrain *)socialbrain
 {
@@ -56,11 +57,18 @@
 {
     [super viewDidLoad];
     traking = NO;
+    indoorStatus = NO;
+    
+    connectionPicker = [[GKPeerPickerController alloc] init];
+    connectionPicker.delegate = self;
+    connectionPicker.connectionTypesMask = GKPeerPickerConnectionTypeNearby;
+    connectionPeers = [[NSMutableArray alloc]init];
 	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
 {
+    indoorButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -109,6 +117,20 @@
     }
 }
 
+- (IBAction)switchIndoor:(id)sender {
+    if(indoorStatus){
+        indoorStatus = NO;
+        indoorButton.titleLabel.text = @"Indoor Mode";
+        [connectionSession disconnectFromAllPeers];
+        [connectionPeers removeAllObjects];
+    }else
+    {
+        indoorStatus = YES;
+        indoorButton.titleLabel.text = @"Outdoor Mode";
+        [connectionPicker show];
+    }
+}
+
 -(void)updateLocationToServer
 {
     if(traking){
@@ -122,4 +144,46 @@
     }
 }
 
+#pragma mark - GKPeerPickerControllerDelegate
+
+- (GKSession *)peerPickerController:(GKPeerPickerController *)picker sessionForConnectionType:(GKPeerPickerConnectionType)type
+{
+    GKSession *session = [[GKSession alloc] initWithSessionID:@"edu.campusgeo.connect" displayName:nil sessionMode:GKSessionModePeer];
+    return session;
+}
+
+-(void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)session
+{
+    self.connectionSession = session;
+    session.delegate = self;
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSData *bluetoothData = [username dataUsingEncoding:NSUTF8StringEncoding];
+    [self.connectionSession sendDataToAllPeers:bluetoothData withDataMode:GKSendDataReliable error:nil];
+    NSLog(@"%@",peerID);
+    [picker dismiss];
+}
+
+#pragma mark - GKSessionDelegate
+
+- (void)receiveData:(NSData *)data fromPeer:(NSString *)peer inSession: (GKSession *)session context:(void *)context {
+    NSArray *receivedData = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    //Handle the data received in the array
+    NSLog(@"%@",receivedData);
+}
+
+- (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state {
+    if (state == GKPeerStateConnected) {
+        // Add the peer to the Array
+        [connectionPeers addObject:peerID];
+        
+        // Used to acknowledge that we will be sending data
+        [session setDataReceiveHandler:self withContext:nil];
+        
+        //In case you need to do something else when a peer connects, do it here
+    }
+    else if (state == GKPeerStateDisconnected) {
+        [self.connectionPeers removeObject:peerID];
+        //Any processing when a peer disconnects
+    }
+}
 @end

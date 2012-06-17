@@ -25,6 +25,7 @@
 		2974F956156B34D8006BA54E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2974F954156B34D8006BA54E /* MainStoryboard.storyboard */; };
 		2974F959156B34D8006BA54E /* CampusGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2974F958156B34D8006BA54E /* CampusGeoViewController.m */; };
 		2977B5F2157DF1BC00498856 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977B5F1157DF1BC00498856 /* Location.m */; };
+		2978363A158E0B5F0085970D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29783639158E0B5F0085970D /* GameKit.framework */; };
 		299E9D6F15833BF700C36A6D /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E9D6E15833BF700C36A6D /* AddFriendViewController.m */; };
 		299E9D721583B2D400C36A6D /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E9D711583B2D300C36A6D /* NotificationViewController.m */; };
 		299E9D751583B6C000C36A6D /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E9D741583B6BF00C36A6D /* Notification.m */; };
@@ -86,6 +87,7 @@
 		2974F958156B34D8006BA54E /* CampusGeoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusGeoViewController.m; sourceTree = "<group>"; };
 		2977B5F0157DF1BC00498856 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Model/Location.h; sourceTree = "<group>"; };
 		2977B5F1157DF1BC00498856 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Model/Location.m; sourceTree = "<group>"; };
+		29783639158E0B5F0085970D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		299E9D6D15833BF700C36A6D /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendViewController.h; path = ViewController/AddFriendViewController.h; sourceTree = "<group>"; };
 		299E9D6E15833BF700C36A6D /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendViewController.m; path = ViewController/AddFriendViewController.m; sourceTree = "<group>"; };
 		299E9D701583B2D300C36A6D /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationViewController.h; path = ViewController/NotificationViewController.h; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2978363A158E0B5F0085970D /* GameKit.framework in Frameworks */,
 				290CE25B157E516700E14B00 /* CoreLocation.framework in Frameworks */,
 				29E9870B157D0AD600FC8D82 /* MapKit.framework in Frameworks */,
 				29E534EF1575333500CF80FA /* libz.dylib in Frameworks */,
@@ -224,6 +227,7 @@
 		2974F941156B34D8006BA54E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29783639158E0B5F0085970D /* GameKit.framework */,
 				290CE25A157E516700E14B00 /* CoreLocation.framework */,
 				29E9870A157D0AD600FC8D82 /* MapKit.framework */,
 				29E534EE1575333500CF80FA /* libz.dylib */,
@@ -486,7 +490,7 @@
 				GCC_PREFIX_HEADER = "CampusGeo/CampusGeo-Prefix.pch";
 				INFOPLIST_FILE = "CampusGeo/CampusGeo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1CB28298-D414-4D17-A994-0E1C30B874C3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E87C9D1F-82AD-4798-8190-2BE6AF5F451C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -499,7 +503,7 @@
 				GCC_PREFIX_HEADER = "CampusGeo/CampusGeo-Prefix.pch";
 				INFOPLIST_FILE = "CampusGeo/CampusGeo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1CB28298-D414-4D17-A994-0E1C30B874C3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E87C9D1F-82AD-4798-8190-2BE6AF5F451C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
