@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation GeoBrain
+@synthesize locationManager;
 
 -(GeoInfo *)getGeoInfoByName:(NSString *)username
 {
@@ -38,24 +39,15 @@
 {
     bindname = username;
     pushGeoType = geoType;
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.delegate = self;
-    [locationManager startMonitoringSignificantLocationChanges];
-    NSString *latitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude];
-    NSString *longitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+    NSString *latitude = [NSString stringWithFormat:@"%f",self.locationManager.location.coordinate.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f",self.locationManager.location.coordinate.longitude];
     [self pushData2Server:username :geoType :latitude :longitude:area];
 
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSString *latitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.latitude];
-    NSString *longitude = [NSString stringWithFormat:@"%f",newLocation.coordinate.longitude];
-    
-    [self pushData2Server:bindname :pushGeoType :latitude :longitude:@"outdoor"];
-    
 }
 
 -(void)pushData2Server:(NSString *)username:(int)geoType:(NSString *)latitude:(NSString *)longitude:(NSString *)area

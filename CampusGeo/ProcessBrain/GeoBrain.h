@@ -15,7 +15,9 @@
     NSString *bindname;
     int pushGeoType;
     BOOL gpsSwitch;
+    CLLocationManager *locationManager;
 }
+@property (nonatomic,retain)CLLocationManager *locationManager;
 
 -(GeoInfo *)getGeoInfoByName:(NSString *)username;
 -(void)setGPSSwitch:(BOOL)value;
