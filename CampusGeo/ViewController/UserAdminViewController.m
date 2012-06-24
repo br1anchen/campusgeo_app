@@ -58,6 +58,10 @@
     [super viewDidLoad];
     traking = NO;
     indoorStatus = NO;
+    [gpsButton setOn:NO];
+    [self.geobrain setGPSSwitch:NO];
+    trakingTimer = nil;
+    [trakingTimer invalidate];
     
     connectionPicker = [[GKPeerPickerController alloc] init];
     connectionPicker.delegate = self;
@@ -71,6 +75,14 @@
     indoorButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    traking = NO;
+    trakingTimer = nil;
+    [trakingTimer invalidate];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -108,6 +120,7 @@
         [self.geobrain setGPSSwitch:YES];
         traking = YES;
         trakingTimer = [NSTimer scheduledTimerWithTimeInterval:5 target: self selector:@selector(updateLocationToServer) userInfo:nil repeats:YES];
+        //[self updateLocationToServer];
     }else
     {
         [self.geobrain setGPSSwitch:NO];
@@ -120,13 +133,19 @@
 - (IBAction)switchIndoor:(id)sender {
     if(indoorStatus){
         indoorStatus = NO;
-        indoorButton.titleLabel.text = @"Indoor Mode";
+        [indoorButton setTitle:@"Indoor Mode" forState:UIControlStateNormal];
+        [indoorButton setTitle:@"Indoor Mode" forState:UIControlStateHighlighted];
+        [indoorButton setTitle:@"Indoor Mode" forState:UIControlStateDisabled];
+        [indoorButton setTitle:@"Indoor Mode" forState:UIControlStateSelected];
         [connectionSession disconnectFromAllPeers];
         [connectionPeers removeAllObjects];
     }else
     {
         indoorStatus = YES;
-        indoorButton.titleLabel.text = @"Outdoor Mode";
+        [indoorButton setTitle:@"Outdoor Mode" forState:UIControlStateNormal];
+        [indoorButton setTitle:@"Outdoor Mode" forState:UIControlStateHighlighted];
+        [indoorButton setTitle:@"Outdoor Mode" forState:UIControlStateDisabled];
+        [indoorButton setTitle:@"Outdoor Mode" forState:UIControlStateSelected];
         [connectionPicker show];
     }
 }

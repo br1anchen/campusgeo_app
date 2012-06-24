@@ -39,10 +39,10 @@
     bindname = username;
     pushGeoType = geoType;
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
+    [locationManager startMonitoringSignificantLocationChanges];
     NSString *latitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%f",locationManager.location.coordinate.longitude];
     [self pushData2Server:username :geoType :latitude :longitude:area];
